@@ -1,3 +1,8 @@
+/**
+ * 
+ * @desc  combineReducers Implementation
+ * @param {function} reducers 
+ */
 const combineReducers = (reducers) => 
   (state = {}, action) => {
     return Object.keys(reducers).reduce(

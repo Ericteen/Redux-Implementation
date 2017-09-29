@@ -1,3 +1,9 @@
+/**
+ * @desc function
+ * 
+ * @param {object} state 
+ * @returns 
+ */
 const mapStateToProps = (state) => {
   return {
     todos: getVisibleTodos(
@@ -7,6 +13,12 @@ const mapStateToProps = (state) => {
   }
 }
 
+/**
+ * 
+ * 
+ * @param {function} { dispatch } 
+ * @returns 
+ */
 const mapDispatchToProps = ({ dispatch }) => {
   return {
     onTodoClick: (id) => {

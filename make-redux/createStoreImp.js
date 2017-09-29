@@ -1,3 +1,9 @@
+/**
+ * 
+ * 
+ * @param {function} reducer 
+ * @returns 
+ */
 const createStore = reducer => {
   let state;
   let listeners = [];
