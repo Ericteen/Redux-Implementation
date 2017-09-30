@@ -1,7 +1,7 @@
 /**
  * 
  * @desc  combineReducers Implementation
- * @param {function} reducers 
+ * @param {object} reducers 
  */
 const combineReducers = (reducers) => 
   (state = {}, action) => {
