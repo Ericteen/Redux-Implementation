@@ -33,6 +33,8 @@ const mapDispatchToProps = ({ dispatch }) => {
 export /**
  * 
  * @desc  connect 高阶函数模拟
+ *        pure component 组件的渲染只依赖传入的 props 和自身的 state
+ *        因其将 dumb 组件和 context 连接起来 故取名 connect
  *        利用 context 特性 取到 store
  *        用 getChildContext() 将 store 放到 Index 的 context 里面
  *        这样每个组件就能获取到 store 了
