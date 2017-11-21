@@ -5,7 +5,7 @@
  * @returns 
  */
 const createStore = reducer => {
-  let state;
+  let state = {};
   let listeners = [];
 
   const getState = () => state;
@@ -23,7 +23,8 @@ const createStore = reducer => {
     };
   };
 
-  dispatch({});
+  // 初始化
+  dispatch({type: '@init'});
 
   return {
     getState,
