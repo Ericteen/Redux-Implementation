@@ -18,6 +18,11 @@ export class Provider extends Component {
     store: PropTypes.object,
   }
 
+  constructor(props, context) {
+    super(props, context)
+  }
+
+
   getChildContext() {
     return {
       store: this.props.store
