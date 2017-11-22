@@ -4,7 +4,11 @@
  * @param {function} reducer 
  * @returns 
  */
-const createStore = reducer => {
+const createStore = (reducer, enhancer) => {
+  if (enhancer) {
+    return enhancer(createStore)(reducer)
+  }
+  
   let state = {};
   let listeners = [];
 

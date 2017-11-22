@@ -20,12 +20,13 @@ export class Provider extends Component {
 
   constructor(props, context) {
     super(props, context)
+    this.store = props.store
   }
 
 
   getChildContext() {
     return {
-      store: this.props.store
+      store: this.store
     }
   }
   

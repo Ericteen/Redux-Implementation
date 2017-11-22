@@ -35,7 +35,7 @@ createStore(reducer, preloadedState, enhancer) {
     if (typeof enhancer !== 'function') {
       throw new Error('Expected the enhancer to be a function.')
     }
-
+    // 判断第二个参数是否为 function, 是的话将其设为 Enhancer
     return enhancer(createStore)(reducer, preloadedState)
   }
   // ...
@@ -43,6 +43,7 @@ createStore(reducer, preloadedState, enhancer) {
 
 // applyMiddleware 作为 Enhancer 传入
 const applyMiddleware = (...middlewares) => (createStore) => (...args) => {
+  // 1.生成 store
   const store = createStore(...args)
   let dispatch = () => {
     throw new Error('Warning')
@@ -54,7 +55,7 @@ const applyMiddleware = (...middlewares) => (createStore) => (...args) => {
     getState: store.getState,
     dispatch: (...args) => dispatch(...args)
   }
-
+  // 2.扩展 dispatch 的功能
   chain = middlewares.map(middleware => middleware(middlewareAPI))
   dispatch = compose(...chain)(store.dispatch)
 
